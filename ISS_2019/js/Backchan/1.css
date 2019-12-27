@@ -1,0 +1,29 @@
+html, body{height: 100%;width: 100%; margin:0;}
+#body{height:100%;}
+#body.imageOne   {background-image: url("../Resources/images/1.jpg");
+    background-position: center;
+width: 50%;
+    height: 50%;
+ }
+#body.imageTwo   {background-image: url("../Resources/images/2.jpg")  ; width: 50%;
+height: 50%;
+    background-position: center;
+}
+#body.imageThree {background-image: url("../Resources/images/3.jpg");
+width: 50%;
+height: 50%;
+    background-position: center;
+}
+#body.imageFour  {background-image: url("../Resources/images/4.jpg");
+width: 50%;
+height: 50%;
+    background-position: center;
+}
+#body.imageFive {background-image: url(../Resources/images/5.jpg);
+width: 50%;
+height: 50%;
+    background-position: center;
+}
+.c{
+    background-color: darkorchid;
+}

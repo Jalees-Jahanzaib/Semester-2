@@ -1,0 +1,10 @@
+Topic: Coarse-grained POS Tagging
+
+Front-end-work:
+	Need to make website responsive.
+	Use of jinja framework.
+
+Back-end-work:
+	Experiments and quizes to be stored in database.
+	Use of flask and sqlite.
+	Converting php file to python.

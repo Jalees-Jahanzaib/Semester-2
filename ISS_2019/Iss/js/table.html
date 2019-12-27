@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+      var arr=new Array();
+
+      function addData(){
+          getData();
+          arr.push({
+                pid:document.getElementById("pid").value,
+                pDes:document.getElementById("pDes").value,
+                pQ:document.getElementById("pQ").value,
+                pDate:document.getElementById("pDate").value
+
+              });
+          localStorage.setItem("localData",JSON.stringify(arr));
+          showData();
+      }
+      function getData(){
+          var str =localStorage.getItem("localData");
+          if(str !=null)
+          arr=JSON.parse(str);}
+          function deleteData(){
+              localStorage.clear();
+          }
+        function showData(){
+            getData();
+            var tbl=document.getElementById("mytable");
+            var x=tbl.rows.length;
+            while(--x){
+                tbl.deleteRow(x);
+            }
+
+            for(i=0;i<arr.length;i++){
+var tbl=document.getElementById("mytable");
+var r=tbl.insertRow();
+var cell1=r.insertCell();
+var cell2=r.insertCell();
+var cell3=r.insertCell();
+var cell4=r.insertCell();
+cell1.innerHTML=arr[i].pid;
+cell2.innerHTML=arr[i].pDes;
+cell3.innerHTML=arr[i].pQ;
+cell4.innerHTML=arr[i].pDate;
+
+        }}
+      
+     /* function myFunction(){
+
+
+}*/
+  </script>
+</head>
+
+<body style="background-color: aquamarine">
+    <h1>Shopping Cart </h1>
+    <form onsubmit="addData();  return false; ">
+        <input type="text" id="pid" placeholder="Enter Product id" required/> <br/>
+        <input type="text" id="pDes" placeholder="Enter Product Description required"/><br/>
+        <input type="number" min=0 id="pQ" placeholder="Enter Product Quantity"/><br/>
+        <input type="date" id="pDate" placeholder="Enter Order date"/><br/>
+        <input type="submit" value="submit" /> 
+        <input type="reset" value="clear" /> 
+        <input type="button" value="Delete localStorage" onclick="deleteData();" /> 
+
+
+    </form>
+
+ <h2>My shopping Cart</h2>   
+
+    <table border=1 id="mytable">
+       <tr> 
+
+<td>Product id</td>
+<td>Product Desciption</td>
+<td>Quantity</td>
+<td>Orderd</td> 
+</tr>
+
+    </table>
+    <script>showData();</script> 
+</body> 
+</html>
